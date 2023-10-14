@@ -62,7 +62,7 @@ df_nogps =  df_nogps.fillna('-')
 m = folium.Map(location=[df_isgps['lat'].mean(), df_isgps['lng'].mean()], zoom_start=7)
 for index, row in df_isgps.iterrows():
     iframe = row['พื้นที่เคลื่อนไหว']
-    popup = folium.Popup(iframe, min_width=300, max_width=300)
+    popup = folium.Popup(iframe, min_width=200, max_width=300)
     folium.Marker(
         [row['lat'], row['lng']], popup=popup, tooltip=row['พื้นที่เคลื่อนไหว']
     ).add_to(m)
